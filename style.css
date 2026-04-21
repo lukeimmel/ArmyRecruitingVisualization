@@ -1,0 +1,636 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  color: #444;
+  background: #f5f5f5;
+  scroll-behavior: smooth;
+}
+
+/* ── NAV ─────────────────────────────────────────────────────────────────── */
+nav {
+  background: #2c3e50;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav .brand {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-right: 40px;
+  text-decoration: none;
+}
+
+nav a {
+  color: #aab;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 400;
+  margin-right: 28px;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #fff;
+}
+
+/* ── PAGE WRAPPER ────────────────────────────────────────────────────────── */
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 32px;
+}
+
+/* ── SECTION HEADER ──────────────────────────────────────────────────────── */
+.section-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 8px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 300;
+  color: #2c3e50;
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666;
+}
+
+/* ── STAT CARDS ──────────────────────────────────────────────────────────── */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.stat-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  padding: 24px 20px;
+}
+
+.stat-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 300;
+  color: #2c3e50;
+  line-height: 1;
+}
+
+.stat-sub {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 6px;
+}
+
+/* ── KPI ROW (MOS Explorer) ──────────────────────────────────────────────── */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid #ddd;
+  margin: 24px 0;
+  background: #fff;
+}
+
+.kpi-card {
+  padding: 24px 28px;
+  border-right: 1px solid #ddd;
+}
+
+.kpi-card:last-child { border-right: none; }
+
+.kpi-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 12px;
+}
+
+.kpi-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2c3e50;
+  line-height: 1;
+}
+
+.kpi-sub {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 8px;
+}
+
+/* ── TWO-COLUMN PANEL ROW ────────────────────────────────────────────────── */
+.panel-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 28px;
+}
+
+.panel-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #2c3e50;
+  border-bottom: 2px solid #2c3e50;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* ── MOS SELECTOR ────────────────────────────────────────────────────────── */
+.mos-header {
+  background: #2c3e50;
+  color: #fff;
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.mos-header label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.mos-header select {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 8px 12px;
+  flex: 1;
+  max-width: 500px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M0 0l6 8 6-8z' fill='%23fff'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+
+.mos-header select option {
+  background: #2c3e50;
+  color: #fff;
+}
+
+.region-bar {
+  background: #e8e8e8;
+  padding: 14px 28px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #555;
+  display: flex;
+  gap: 24px;
+}
+
+.region-bar span { color: #999; font-weight: 300; margin-right: 4px; }
+
+/* ── BAR CHART (Civilian Career Paths) ───────────────────────────────────── */
+.bar-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.bar-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #444;
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.bar-track {
+  flex: 1;
+  background: #f0f0f0;
+  height: 22px;
+  position: relative;
+  margin-top: 1px;
+}
+
+.bar-fill {
+  height: 100%;
+  background: #2c3e50;
+  display: flex;
+  align-items: center;
+  padding-left: 6px;
+  transition: width 0.5s ease;
+  min-width: 0;
+}
+
+.bar-pct {
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* ── MATCH BADGES ────────────────────────────────────────────────────────── */
+.match-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.match-row:last-child { border-bottom: none; }
+
+.match-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.match-salary {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+.badge.strong {
+  background: #2c3e50;
+  color: #fff;
+}
+
+.badge.partial {
+  background: #ddd;
+  color: #666;
+}
+
+/* ── MAP PAGE ────────────────────────────────────────────────────────────── */
+.map-container {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.map-controls {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.map-controls label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #999;
+  margin-right: 6px;
+}
+
+.map-controls select {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  color: #444;
+  background: #fff;
+}
+
+.tooltip {
+  position: absolute;
+  background: rgba(44, 62, 80, 0.92);
+  color: #fff;
+  padding: 10px 14px;
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+  pointer-events: none;
+  border-radius: 2px;
+  display: none;
+  z-index: 10;
+  line-height: 1.6;
+}
+
+.tooltip strong {
+  font-size: 13px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* ── LEGEND ──────────────────────────────────────────────────────────────── */
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 11px;
+  color: #888;
+}
+
+.legend-swatch {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ddd;
+}
+
+/* ── HOME HERO ───────────────────────────────────────────────────────────── */
+.hero {
+  border-left: 4px solid #2c3e50;
+  padding-left: 20px;
+  margin-bottom: 40px;
+}
+
+.hero h1 { font-size: 42px; }
+
+.hero p {
+  font-size: 16px;
+  max-width: 600px;
+  margin-top: 8px;
+}
+
+.nav-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.nav-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 28px 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  display: block;
+}
+
+.nav-card:hover {
+  border-color: #2c3e50;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.nav-card .nav-card-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 8px;
+}
+
+.nav-card h2 { font-size: 18px; margin-bottom: 8px; }
+
+.nav-card p { font-size: 13px; }
+
+/* ── SOURCE FOOTNOTE ─────────────────────────────────────────────────────── */
+.source-note {
+  font-size: 11px;
+  color: #bbb;
+  margin-top: 32px;
+  border-top: 1px solid #eee;
+  padding-top: 12px;
+}
+
+/* ── LOADING STATE ───────────────────────────────────────────────────────── */
+.loading {
+  text-align: center;
+  padding: 60px;
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* ── RELATED BADGE ───────────────────────────────────────────────────────── */
+.badge.related {
+  background: #e8f0f8;
+  color: #4a6fa5;
+  border: 1px solid #c0d0e8;
+}
+
+/* ── PANEL SECTION DIVIDER ───────────────────────────────────────────────── */
+.match-section-header {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #bbb;
+  padding: 14px 0 6px;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 4px;
+}
+
+/* ── STORY TRAIL ─────────────────────────────────────────────────────────── */
+.story-trail {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #aaa;
+  margin-bottom: 24px;
+}
+
+.story-trail a {
+  color: #aaa;
+  text-decoration: none;
+}
+
+.story-trail a:hover { color: #2c3e50; }
+
+.story-trail .trail-sep {
+  color: #ddd;
+  font-size: 13px;
+}
+
+.story-trail .trail-current {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* ── CONTEXT BANNER ──────────────────────────────────────────────────────── */
+.context-banner {
+  background: #e8f0f8;
+  border-left: 4px solid #4a6fa5;
+  padding: 12px 20px;
+  font-size: 13px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  display: none;
+}
+
+.context-banner strong { font-weight: 600; }
+
+/* ── CROSS-LINK ROW ──────────────────────────────────────────────────────── */
+.cross-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.cross-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 12px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2c3e50;
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.cross-link:hover {
+  border-color: #2c3e50;
+  background: #2c3e50;
+  color: #fff;
+}
+
+.cross-link .cl-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  display: block;
+}
+
+.cross-link .cl-title {
+  font-size: 13px;
+  font-weight: 600;
+  display: block;
+}
+
+/* ── VET OCCUPATION PANEL ────────────────────────────────────────────────── */
+.occ-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.occ-bar-label {
+  font-size: 12px;
+  color: #444;
+  width: 200px;
+  flex-shrink: 0;
+  font-weight: 600;
+}
+
+.occ-bar-track {
+  flex: 1;
+  background: #f0f0f0;
+  height: 18px;
+  position: relative;
+}
+
+.occ-bar-fill {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 6px;
+}
+
+.occ-bar-pct {
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.occ-bar-pct-outside {
+  font-size: 11px;
+  color: #888;
+  width: 36px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.occ-highlight {
+  font-size: 11px;
+  background: #e8f0f8;
+  color: #2c3e50;
+  border-left: 3px solid #4a6fa5;
+  padding: 8px 12px;
+  margin-top: 16px;
+  font-weight: 600;
+}
+
+/* ── MAP CLICK HINT ──────────────────────────────────────────────────────── */
+.map-hint {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* ── HIGHLIGHTED STATE (origins/destinations cross-link) ─────────────────── */
+.state.highlighted, .county.highlighted {
+  stroke: #e74c3c !important;
+  stroke-width: 2px !important;
+}
+

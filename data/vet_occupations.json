@@ -1,0 +1,42 @@
+{
+  "source": "BLS Employment Situation of Veterans, 2024 Annual Averages (Table 4)",
+  "note": "Employed veterans 18 years and over, all periods of service",
+  "total_employed_thousands": 9847,
+  "categories": [
+    {
+      "label": "Management & Professional",
+      "pct": 38.1,
+      "color": "#2c3e50",
+      "soc_groups": ["11","13","15","17","19","21","23","25","27","29"],
+      "examples": "Managers, Engineers, Analysts, Nurses, Teachers"
+    },
+    {
+      "label": "Sales & Office Support",
+      "pct": 15.8,
+      "color": "#4a6fa5",
+      "soc_groups": ["41","43"],
+      "examples": "Admin assistants, Sales reps, Customer service"
+    },
+    {
+      "label": "Production & Transportation",
+      "pct": 20.9,
+      "color": "#6b8cba",
+      "soc_groups": ["51","53"],
+      "examples": "Truck drivers, Machinists, Assemblers, Logistics"
+    },
+    {
+      "label": "Service Occupations",
+      "pct": 14.3,
+      "color": "#9ab0cc",
+      "soc_groups": ["31","33","35","37","39"],
+      "examples": "Police, Firefighters, Food service, Healthcare support"
+    },
+    {
+      "label": "Construction & Maintenance",
+      "pct": 10.9,
+      "color": "#c8d8e8",
+      "soc_groups": ["45","47","49"],
+      "examples": "Electricians, Mechanics, Carpenters, HVAC"
+    }
+  ]
+}
