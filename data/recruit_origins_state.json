@@ -1,0 +1,308 @@
+[
+  {
+    "state": "Texas",
+    "civ_pct_18_24": 9.71,
+    "army_ratio": 1.25,
+    "army_accessions": 4907
+  },
+  {
+    "state": "California",
+    "civ_pct_18_24": 11.93,
+    "army_ratio": 0.84,
+    "army_accessions": 4052
+  },
+  {
+    "state": "Florida",
+    "civ_pct_18_24": 5.8,
+    "army_ratio": 1.71,
+    "army_accessions": 4010
+  },
+  {
+    "state": "Georgia",
+    "civ_pct_18_24": 3.39,
+    "army_ratio": 1.55,
+    "army_accessions": 2124
+  },
+  {
+    "state": "North Carolina",
+    "civ_pct_18_24": 3.31,
+    "army_ratio": 1.52,
+    "army_accessions": 2034
+  },
+  {
+    "state": "New York",
+    "civ_pct_18_24": 5.91,
+    "army_ratio": 0.74,
+    "army_accessions": 1768
+  },
+  {
+    "state": "Virginia",
+    "civ_pct_18_24": 2.7,
+    "army_ratio": 1.36,
+    "army_accessions": 1485
+  },
+  {
+    "state": "Illinois",
+    "civ_pct_18_24": 3.79,
+    "army_ratio": 0.73,
+    "army_accessions": 1119
+  },
+  {
+    "state": "Pennsylvania",
+    "civ_pct_18_24": 3.89,
+    "army_ratio": 0.71,
+    "army_accessions": 1117
+  },
+  {
+    "state": "Ohio",
+    "civ_pct_18_24": 3.82,
+    "army_ratio": 0.68,
+    "army_accessions": 1050
+  },
+  {
+    "state": "South Carolina",
+    "civ_pct_18_24": 1.55,
+    "army_ratio": 1.57,
+    "army_accessions": 984
+  },
+  {
+    "state": "Arizona",
+    "civ_pct_18_24": 2.28,
+    "army_ratio": 1.05,
+    "army_accessions": 968
+  },
+  {
+    "state": "Tennessee",
+    "civ_pct_18_24": 1.91,
+    "army_ratio": 1.17,
+    "army_accessions": 904
+  },
+  {
+    "state": "New Jersey",
+    "civ_pct_18_24": 2.6,
+    "army_ratio": 0.84,
+    "army_accessions": 883
+  },
+  {
+    "state": "Alabama",
+    "civ_pct_18_24": 1.46,
+    "army_ratio": 1.41,
+    "army_accessions": 832
+  },
+  {
+    "state": "Washington",
+    "civ_pct_18_24": 2.08,
+    "army_ratio": 0.95,
+    "army_accessions": 799
+  },
+  {
+    "state": "Maryland",
+    "civ_pct_18_24": 1.91,
+    "army_ratio": 0.99,
+    "army_accessions": 765
+  },
+  {
+    "state": "Indiana",
+    "civ_pct_18_24": 2.18,
+    "army_ratio": 0.82,
+    "army_accessions": 723
+  },
+  {
+    "state": "Michigan",
+    "civ_pct_18_24": 3.07,
+    "army_ratio": 0.57,
+    "army_accessions": 708
+  },
+  {
+    "state": "Colorado",
+    "civ_pct_18_24": 1.77,
+    "army_ratio": 0.89,
+    "army_accessions": 637
+  },
+  {
+    "state": "Louisiana",
+    "civ_pct_18_24": 1.36,
+    "army_ratio": 1.13,
+    "army_accessions": 621
+  },
+  {
+    "state": "Kentucky",
+    "civ_pct_18_24": 1.36,
+    "army_ratio": 1.06,
+    "army_accessions": 583
+  },
+  {
+    "state": "Missouri",
+    "civ_pct_18_24": 1.82,
+    "army_ratio": 0.73,
+    "army_accessions": 537
+  },
+  {
+    "state": "Oklahoma",
+    "civ_pct_18_24": 1.22,
+    "army_ratio": 1.0,
+    "army_accessions": 493
+  },
+  {
+    "state": "Nevada",
+    "civ_pct_18_24": 0.96,
+    "army_ratio": 1.19,
+    "army_accessions": 462
+  },
+  {
+    "state": "Massachusetts",
+    "civ_pct_18_24": 2.0,
+    "army_ratio": 0.53,
+    "army_accessions": 429
+  },
+  {
+    "state": "Wisconsin",
+    "civ_pct_18_24": 1.78,
+    "army_ratio": 0.59,
+    "army_accessions": 425
+  },
+  {
+    "state": "Arkansas",
+    "civ_pct_18_24": 0.92,
+    "army_ratio": 1.07,
+    "army_accessions": 398
+  },
+  {
+    "state": "Oregon",
+    "civ_pct_18_24": 1.13,
+    "army_ratio": 0.86,
+    "army_accessions": 393
+  },
+  {
+    "state": "Utah",
+    "civ_pct_18_24": 1.39,
+    "army_ratio": 0.66,
+    "army_accessions": 371
+  },
+  {
+    "state": "Minnesota",
+    "civ_pct_18_24": 1.66,
+    "army_ratio": 0.53,
+    "army_accessions": 356
+  },
+  {
+    "state": "Mississippi",
+    "civ_pct_18_24": 0.83,
+    "army_ratio": 1.04,
+    "army_accessions": 349
+  },
+  {
+    "state": "Connecticut",
+    "civ_pct_18_24": 0.98,
+    "army_ratio": 0.76,
+    "army_accessions": 301
+  },
+  {
+    "state": "Kansas",
+    "civ_pct_18_24": 0.85,
+    "army_ratio": 0.85,
+    "army_accessions": 292
+  },
+  {
+    "state": "Hawaii",
+    "civ_pct_18_24": 0.35,
+    "army_ratio": 2.01,
+    "army_accessions": 284
+  },
+  {
+    "state": "Iowa",
+    "civ_pct_18_24": 1.02,
+    "army_ratio": 0.66,
+    "army_accessions": 272
+  },
+  {
+    "state": "New Mexico",
+    "civ_pct_18_24": 0.69,
+    "army_ratio": 0.91,
+    "army_accessions": 254
+  },
+  {
+    "state": "Idaho",
+    "civ_pct_18_24": 0.66,
+    "army_ratio": 0.84,
+    "army_accessions": 224
+  },
+  {
+    "state": "West Virginia",
+    "civ_pct_18_24": 0.49,
+    "army_ratio": 0.94,
+    "army_accessions": 186
+  },
+  {
+    "state": "Nebraska",
+    "civ_pct_18_24": 0.54,
+    "army_ratio": 0.84,
+    "army_accessions": 183
+  },
+  {
+    "state": "New Hampshire",
+    "civ_pct_18_24": 0.38,
+    "army_ratio": 0.92,
+    "army_accessions": 141
+  },
+  {
+    "state": "Maine",
+    "civ_pct_18_24": 0.37,
+    "army_ratio": 0.88,
+    "army_accessions": 132
+  },
+  {
+    "state": "Montana",
+    "civ_pct_18_24": 0.33,
+    "army_ratio": 0.97,
+    "army_accessions": 129
+  },
+  {
+    "state": "Delaware",
+    "civ_pct_18_24": 0.26,
+    "army_ratio": 1.03,
+    "army_accessions": 108
+  },
+  {
+    "state": "South Dakota",
+    "civ_pct_18_24": 0.26,
+    "army_ratio": 0.94,
+    "army_accessions": 99
+  },
+  {
+    "state": "Alaska",
+    "civ_pct_18_24": 0.22,
+    "army_ratio": 1.1,
+    "army_accessions": 98
+  },
+  {
+    "state": "North Dakota",
+    "civ_pct_18_24": 0.24,
+    "army_ratio": 0.87,
+    "army_accessions": 84
+  },
+  {
+    "state": "Rhode Island",
+    "civ_pct_18_24": 0.33,
+    "army_ratio": 0.54,
+    "army_accessions": 72
+  },
+  {
+    "state": "Wyoming",
+    "civ_pct_18_24": 0.16,
+    "army_ratio": 0.83,
+    "army_accessions": 54
+  },
+  {
+    "state": "Vermont",
+    "civ_pct_18_24": 0.16,
+    "army_ratio": 0.79,
+    "army_accessions": 51
+  },
+  {
+    "state": "District of Columbia",
+    "civ_pct_18_24": 0.18,
+    "army_ratio": 0.58,
+    "army_accessions": 42
+  }
+]

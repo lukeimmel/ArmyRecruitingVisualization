@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Army MOS Career Outcomes</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <nav>
+    <a class="brand" href="./index.html">Army MOS</a>
+    <a href="./index.html" class="active">Overview</a>
+    <a href="./mos-explorer.html">MOS Explorer</a>
+    <a href="./origins.html">Recruit Origins</a>
+    <a href="./destinations.html">Veteran Destinations</a>
+  </nav>
+
+  <div class="page">
+
+    <div class="hero">
+      <div class="section-title">InfoVis Project — Spring 2026</div>
+      <h1>Army MOS<br>Career Outcomes</h1>
+      <p>Explore where Army soldiers come from, what jobs they hold, and where they land after service — and what civilian career opportunities await them.</p>
+    </div>
+
+    <!-- Story trail shown on home as a flow diagram -->
+    <div class="story-trail" style="margin-bottom:32px;font-size:13px">
+      <a href="./origins.html" style="font-weight:600;color:#2c3e50">1. Where they come from</a>
+      <span class="trail-sep" style="font-size:18px">›</span>
+      <a href="./mos-explorer.html" style="font-weight:600;color:#2c3e50">2. What MOS they hold</a>
+      <span class="trail-sep" style="font-size:18px">›</span>
+      <a href="./destinations.html" style="font-weight:600;color:#2c3e50">3. Where they end up</a>
+    </div>
+
+    <div class="section-title">National Snapshot</div>
+    <div class="stat-grid" id="stat-grid">
+      <div class="stat-card">
+        <div class="stat-label">Active Army MOS</div>
+        <div class="stat-value" id="stat-mos">—</div>
+        <div class="stat-sub">Occupational specialties</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">FY2022 Recruits</div>
+        <div class="stat-value" id="stat-recruits">—</div>
+        <div class="stat-sub">New Army enlistments</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">U.S. Veterans (2023)</div>
+        <div class="stat-value" id="stat-vets">—</div>
+        <div class="stat-sub">Across 3,150 counties</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Avg Civilian Salary</div>
+        <div class="stat-value" id="stat-salary">—</div>
+        <div class="stat-sub">Across all MOS career paths</div>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top:40px">Explore the Data</div>
+    <div class="nav-cards">
+      <a class="nav-card" href="./origins.html">
+        <div class="nav-card-label">Step 1 — Recruit Origins</div>
+        <h2>Where Soldiers Come From</h2>
+        <p>State-level map of FY2022 Army enlistment patterns. See which states send the most recruits and which are over-represented relative to population.</p>
+      </a>
+      <a class="nav-card" href="./mos-explorer.html">
+        <div class="nav-card-label">Step 2 — MOS Explorer</div>
+        <h2>What Jobs They Hold</h2>
+        <p>Select any of 490 Army MOS codes and explore mapped civilian careers, salary outlook, job growth projections, and how veteran skills translate to the workforce.</p>
+      </a>
+      <a class="nav-card" href="./destinations.html">
+        <div class="nav-card-label">Step 3 — Veteran Destinations</div>
+        <h2>Where Veterans Settle</h2>
+        <p>County-level map of the 2023 U.S. veteran population. Discover where veterans concentrate geographically after leaving service.</p>
+      </a>
+    </div>
+
+    <div class="source-note">
+      Data sources: BLS Occupational Employment &amp; Wage Statistics (May 2024) · DoD Military Occupational Crosswalk (Jul 2024) ·
+      DoD VetPop2023 County Data · OPA Population Representation FY2022 · BLS Occupational Projections 2024–2034 ·
+      BLS Employment Situation of Veterans (2024)
+    </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.7.0/d3.min.js"></script>
+  <script>
+    d3.json('./data/home_stats.json').then(function(stats) {
+      document.getElementById('stat-mos').textContent = stats.total_army_mos.toLocaleString();
+      document.getElementById('stat-recruits').textContent = stats.total_fy22_recruits.toLocaleString();
+      document.getElementById('stat-vets').textContent = (stats.total_vet_population / 1e6).toFixed(1) + 'M';
+      document.getElementById('stat-salary').textContent = '$' + Math.round(stats.avg_civilian_salary / 1000) + 'K';
+    });
+  </script>
+
+</body>
+</html>
