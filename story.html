@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Army MOS - The Full Story</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./story.css" />
+</head>
+<body class="story-body">
+
+  <nav>
+    <a class="brand" href="./story.html">Army MOS Career Outcomes</a>
+  </nav>
+
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Army MOS<br>Career Outcomes</h1>
+      <p>Follow the full arc of an Army career - where soldiers come from, what jobs they hold, and where they land after service.</p>
+      <div class="hero-steps">
+        <div>1 - Select a state</div>
+        <div class="arrow"> → </div>
+        <div>2 - Explore an MOS</div>
+        <div class="arrow"> → </div>
+        <div>3 - Find local career data</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECRUIT ORIGINS -->
+  <section class="scroll-section" id="sec-origins">
+
+    <!-- Sticky viz panel -->
+    <div class="sticky-panel" id="origins-panel">
+      <div class="panel-header">
+        <div class="section-title">Step 01</div>
+        <h2>Recruit Origins</h2>
+        <div id="origins-state-context" class="state-context" style="display:none">
+          Selected: <strong id="origins-selected-state">-</strong>
+        </div>
+      </div>
+
+      <div class="viz-controls">
+        <label>Color by</label>
+        <select id="s-color-mode">
+          <option value="accessions">Recruit Count</option>
+          <option value="ratio">Representation Ratio</option>
+        </select>
+      </div>
+
+      <svg id="s-origins-map" class="story-svg"
+           viewBox="0 0 960 580"
+           preserveAspectRatio="xMidYMid meet"></svg>
+
+      <div id="s-origins-legend" class="sticky-legend"></div>
+
+      <div class="story-map-hint" id="origins-hint">Hover a state for details · Click to select and carry forward</div>
+
+      <!-- State selected: continue CTA -->
+      <div class="selection-indicator" id="origins-continue" style="display:none">
+        <span>Carrying <strong id="origins-carry-state">-</strong> into MOS Explorer</span>
+        <button class="continue-btn" id="btn-to-mos">Continue to MOS Explorer ↓</button>
+      </div>
+    </div>
+
+    <!-- Scroll narrative -->
+    <div class="scroll-narrative">
+
+      <div class="scroll-step" data-step="0" data-section="origins">
+        <div class="step-card">
+          <h3>40,000 soldiers enlist each year</h3>
+          <p>The Army draws recruits from every state - but not equally. Population, economy, and military culture all shape who signs up and from where.</p>
+          <div class="step-stat">40,292<span>FY2022 Army NPS accessions</span></div>
+        </div>
+      </div>
+
+      <div class="scroll-step" data-step="1" data-section="origins">
+        <div class="step-card">
+          <h3>Texas leads the nation</h3>
+          <p>Texas sends nearly 4,900 recruits - more than any other state. California and Florida follow. Raw population drives these totals.</p>
+          <div class="step-stat">~4,907<span>Texas FY2022 recruits</span></div>
+        </div>
+      </div>
+
+      <div class="scroll-step" data-step="2" data-section="origins">
+        <div class="step-card">
+          <h3>Smaller states punch above their weight</h3>
+          <p>Adjusted for civilian population aged 18–24, some states recruit far above their share. Switch the color mode to see where Army service is most culturally embedded.</p>
+        </div>
+      </div>
+
+      <div class="scroll-step" data-step="3" data-section="origins">
+        <div class="step-card">
+          <h3>Select a state to carry forward</h3>
+          <p>Click any state on the map. Your selection will follow you into the MOS Explorer and through to the veteran destinations map - where you can see local job market data for that state.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MOS EXPLORER -->
+  <section class="scroll-section" id="sec-mos">
+
+    <div class="sticky-panel" id="mos-panel">
+      <div class="panel-header">
+        <div class="section-title">Step 02</div>
+        <h2>MOS Explorer</h2>
+        <div id="mos-state-context" class="state-context" style="display:none">
+          State context: <strong id="mos-carrying-state">-</strong>
+        </div>
+      </div>
+
+      <div class="viz-controls">
+        <label>Select MOS</label>
+        <select id="s-mos-select" style="flex:1;max-width:340px">
+          <option value="">- Select an MOS -</option>
+        </select>
+      </div>
+
+      <!-- Compact KPIs -->
+      <div class="mini-kpi-grid">
+        <div class="mini-kpi">
+          <div class="mini-kpi-label">Avg Salary</div>
+          <div class="mini-kpi-value" id="s-kpi-salary">-</div>
+        </div>
+        <div class="mini-kpi">
+          <div class="mini-kpi-label">Job Growth</div>
+          <div class="mini-kpi-value" id="s-kpi-growth">-</div>
+        </div>
+        <div class="mini-kpi">
+          <div class="mini-kpi-label">Openings/yr</div>
+          <div class="mini-kpi-value" id="s-kpi-openings">-</div>
+        </div>
+        <div class="mini-kpi">
+          <div class="mini-kpi-label">Careers</div>
+          <div class="mini-kpi-value" id="s-kpi-matches">-</div>
+        </div>
+      </div>
+
+      <!-- Career bars -->
+      <div class="story-bars" id="s-career-bars">
+        <div class="loading">Select an MOS above</div>
+      </div>
+
+      <!-- Bar legend -->
+      <div id="s-bar-legend" style="padding:4px 20px 6px;display:flex;gap:12px;flex-wrap:wrap;flex-shrink:0;border-top:1px solid #f0f0f0"></div>
+
+      <!-- Expandable veteran occupation context -->
+      <details class="vet-occ-details" id="vet-occ-details">
+        <summary>Where Veterans Work Nationally</summary>
+        <div class="occ-content">
+          <div id="s-vet-occ-bars"></div>
+          <div id="s-vet-occ-note" class="occ-highlight" style="display:none"></div>
+          <div style="font-size:10px;color:#bbb;margin-top:8px">BLS Employment Situation of Veterans, 2024. ~9.8M employed veterans.</div>
+        </div>
+      </details>
+
+      <!-- Continue CTA -->
+      <div style="padding:10px 20px;flex-shrink:0;border-top:1px solid #f0f0f0">
+        <button class="continue-btn" id="btn-to-dest" style="display:none">
+          Continue to Veteran Destinations ↓
+        </button>
+        <div id="mos-select-prompt" style="font-size:12px;color:#aaa;font-style:italic">
+          Select an MOS above to continue
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll narrative -->
+    <div class="scroll-narrative">
+
+      <div class="scroll-step" data-step="0" data-section="mos">
+        <div class="step-card">
+          <h3>490 Military Occupational Specialties</h3>
+          <p>Every soldier is assigned an MOS - a job code defining their military role. The Army encompasses everything from infantry and armor to cybersecurity, healthcare, and logistics.</p>
+          <div class="step-stat">490<span>Active Army MOS codes</span></div>
+        </div>
+      </div>
+
+      <div class="scroll-step" data-step="1" data-section="mos">
+        <div class="step-card">
+          <h3>25U - Signal Operations Support</h3>
+          <p>Signal soldiers maintain Army communications networks. Their civilian equivalents - network administrators, computer support specialists, IT analysts - are in high demand.</p>
+          <div class="step-stat">$76,827<span>avg civilian salary for 25U</span></div>
+        </div>
+      </div>
+
+      <div class="scroll-step" data-step="2" data-section="mos">
+        <div class="step-card">
+          <h3>Direct matches and related paths</h3>
+          <p>Dark bars are direct MOS-to-civilian crosswalk matches (DoD MILX). Lighter bars are related occupations in the same field - expanding the opportunity set beyond the obvious career paths.</p>
+        </div>
+      </div>
+
+      <div class="scroll-step" data-step="3" data-section="mos">
+        <div class="step-card">
+          <h3>Select any of the 490 MOS codes</h3>
+          <p>Use the dropdown to explore any Army occupational specialty. When ready, continue to the destinations map to see what those civilian careers pay in different parts of the country.</p>
+          <p style="margin-top:12px;font-size:12px;color:#aaa">Tip: expand "Where Veterans Work Nationally" to see how this MOS aligns with broader veteran employment patterns.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VETERAN DESTINATIONS -->
+  <section class="scroll-section" id="sec-destinations">
+
+    <div class="sticky-panel" id="dest-panel">
+      <div class="panel-header">
+        <div class="section-title">Step 03</div>
+        <h2>Veteran Destinations</h2>
+        <div id="dest-context" class="state-context" style="display:none">
+          <span id="dest-carrying-state">-</span> highlighted &nbsp;·&nbsp; <span id="dest-carrying-mos">-</span>
+        </div>
+      </div>
+
+      <div class="viz-controls">
+        <div style="display:flex;align-items:center;gap:8px">
+          <label>Veterans</label>
+          <select id="s-sex-filter">
+            <option value="total">All</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;flex:1;min-width:0">
+          <label>Career MOS</label>
+          <select id="s-dest-mos-select" style="flex:1;min-width:0;max-width:260px">
+            <option value="">- Select MOS -</option>
+          </select>
+        </div>
+      </div>
+
+      <svg id="s-dest-map" class="story-svg"
+           viewBox="0 0 960 600"
+           preserveAspectRatio="xMidYMid meet"></svg>
+
+      <div id="s-dest-legend" class="sticky-legend"></div>
+
+      <div class="story-map-hint" id="dest-hint">Select an MOS above · Click any county to see local career wages</div>
+
+      <!-- Career panel -->
+      <div class="dest-career-panel" id="s-career-panel">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <div id="s-career-panel-title" style="font-size:12px;font-weight:700;color:#2c3e50"></div>
+          <button id="s-career-panel-close" style="background:none;border:none;color:#aaa;cursor:pointer;font-size:16px;padding:0">&times;</button>
+        </div>
+        <div id="s-career-panel-body"></div>
+        <div style="font-size:10px;color:#bbb;margin-top:8px">BLS OEWS May 2024 state-level estimates</div>
+      </div>
+    </div>
+
+    <!-- Scroll narrative -->
+    <div class="scroll-narrative">
+
+      <div class="scroll-step" data-step="0" data-section="destinations">
+        <div class="step-card">
+          <h3>18.3 million veterans across 3,150 counties</h3>
+          <p>After service, veterans settle across the country - but not randomly. Sun Belt states, areas near major military bases, and coastal metros draw disproportionate shares.</p>
+          <div class="step-stat">18.3M<span>U.S. veterans (VetPop 2023)</span></div>
+        </div>
+      </div>
+
+      <div class="scroll-step" data-step="1" data-section="destinations">
+        <div class="step-card">
+          <h3>Maricopa, Los Angeles, San Diego lead all counties</h3>
+          <p>Maricopa County, AZ - home to Luke AFB and a major VA hub - leads with 246,000 veterans. California, Texas, and Florida dominate the top of the list.</p>
+          <div class="step-stat">246K<span>veterans in Maricopa County, AZ</span></div>
+        </div>
+      </div>
+
+      <div class="scroll-step" data-step="2" data-section="destinations">
+        <div class="step-card">
+          <h3>What does your MOS pay here?</h3>
+          <p>Select your MOS using the dropdown above the map, then click any county. You'll see state-level wages for each civilian career path - compared to the national average.</p>
+          <p style="margin-top:10px;font-size:13px;font-weight:600;color:#2c3e50">Green = above national average. Red = below.</p>
+        </div>
+      </div>
+
+      <div class="scroll-step" data-step="3" data-section="destinations">
+        <div class="step-card">
+          <h3>Compare any county, any MOS</h3>
+          <p>Click different counties to compare. Change the MOS to see how different career paths pay across the country. Use the sex filter to view male or female veteran concentrations.</p>
+          <div style="margin-top:20px">
+            <a href="#hero" class="continue-btn" style="text-align:center">↑ Start over</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OUTRO -->
+  <section id="outro">
+    <div class="outro-content">
+      <h2>The full picture</h2>
+      <div class="outro-stats">
+        <div><strong>490</strong><span>Army MOS codes</span></div>
+        <div><strong>40K+</strong><span>FY2022 recruits</span></div>
+        <div><strong>18.3M</strong><span>U.S. veterans</span></div>
+        <div><strong>3,150</strong><span>counties mapped</span></div>
+      </div>
+      <p>Data: BLS OEWS May 2024 · DoD MILX Jul 2024 · VetPop2023 · OPA PopRep FY2022 · BLS Employment Situation of Veterans 2024</p>
+      <a href="#hero" class="continue-btn">↑ Start over</a>
+    </div>
+  </section>
+
+  <div class="tooltip" id="tooltip"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.7.0/d3.min.js"></script>
+  <script src="https://unpkg.com/topojson@3"></script>
+  <script src="https://unpkg.com/scrollama"></script>
+  <script src="./js/story.js"></script>
+
+</body>
+</html>
